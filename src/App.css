@@ -1,0 +1,215 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0;
+}
+
+.subtitle {
+  color: var(--text);
+}
+
+/* Connect form */
+.connect-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.connect-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-h);
+  text-align: left;
+}
+
+.connect-form input {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: var(--mono);
+  background: var(--bg);
+  color: var(--text-h);
+}
+
+.connect-form input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: -1px;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  background: var(--accent);
+  color: white;
+}
+
+button:hover {
+  background: var(--accent-hover);
+}
+
+.error {
+  color: var(--danger);
+  font-size: 14px;
+  padding: 8px 12px;
+  border: 1px solid var(--danger);
+  border-radius: 6px;
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.info {
+  text-align: left;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.info h3 {
+  font-size: 16px;
+  color: var(--text-h);
+  margin-bottom: 8px;
+}
+
+.info ol {
+  padding-left: 20px;
+  font-size: 14px;
+}
+
+.info li {
+  margin-bottom: 4px;
+}
+
+/* Task list view */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.disconnect {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  font-size: 13px;
+  padding: 4px 12px;
+}
+
+.disconnect:hover {
+  color: var(--text-h);
+  border-color: var(--text);
+  background: transparent;
+}
+
+.add-task {
+  display: flex;
+  gap: 8px;
+}
+
+.add-task input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 16px;
+  background: var(--bg);
+  color: var(--text-h);
+}
+
+.add-task input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: -1px;
+}
+
+.task-list {
+  list-style: none;
+}
+
+.task-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.task-list li:last-child {
+  border-bottom: none;
+}
+
+.task-list li.done .title {
+  text-decoration: line-through;
+  color: var(--text);
+}
+
+.task-list .toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+.task-list li.done .toggle {
+  background: var(--success);
+  border-color: var(--success);
+  color: white;
+}
+
+.task-list .title {
+  flex: 1;
+  color: var(--text-h);
+  text-align: left;
+}
+
+.task-list .status {
+  font-size: 12px;
+  font-family: var(--mono);
+  color: var(--text);
+}
+
+.task-list .delete {
+  background: transparent;
+  color: var(--text);
+  border: none;
+  font-size: 18px;
+  padding: 0 4px;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.task-list li:hover .delete {
+  opacity: 1;
+}
+
+.task-list .delete:hover {
+  color: var(--danger);
+  background: transparent;
+}
+
+.task-list .empty {
+  color: var(--text);
+  justify-content: center;
+  font-size: 14px;
+  border-bottom: none;
+}
