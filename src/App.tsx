@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
-import { UdClient, Task } from "./ud-client";
+import { UdClient } from "./ud-client";
+import type { Task } from "./ud-client";
 import "./App.css";
 
 function App() {

@@ -45,7 +45,8 @@ export class UdClient {
   // ── Tasks ──────────────────────────────────────────────
 
   async listTasks(): Promise<Task[]> {
-    return this.request("GET", "/task");
+    const res = await this.request<{ items: Task[] }>("GET", "/task");
+    return res.items ?? [];
   }
 
   async getTask(id: string): Promise<Task> {
@@ -57,7 +58,7 @@ export class UdClient {
   }
 
   async updateTask(id: string, task: Partial<CreateTaskInput>): Promise<Task> {
-    return this.request("PUT", `/task/${id}`, task);
+    return this.request("POST", `/task/${id}`, task);
   }
 
   async deleteTask(id: string): Promise<void> {
